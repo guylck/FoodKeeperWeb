@@ -7,7 +7,7 @@ import App from './App';
 import './index.css';
 import * as firebase from 'firebase';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-// import { Router, Route, Link } from 'react-router';
+import { Router, Route, Link, browserHistory } from 'react-router';
 
 // Initialize Firebase
 var config = {
@@ -25,6 +25,12 @@ firebase.initializeApp(config);
 injectTapEventPlugin();
 
 ReactDOM.render(
-  <App />,
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <Route path="login" component={App}>
+ 
+      </Route>
+    </Route>
+  </Router>,
   document.getElementById('root')
 );
