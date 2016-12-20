@@ -1,9 +1,10 @@
 /* jshint esversion: 6 */
 /* eslint-disable */
 
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import LoginSection from './Views/Login/LoginSectionComponent';
 import './index.css';
 import * as firebase from 'firebase';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -24,12 +25,17 @@ firebase.initializeApp(config);
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
+class Test extends Component{
+
+  render() {
+    return <h1>TESSSTTTT</h1>;
+  }
+}
+
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <Route path="login" component={App}>
- 
-      </Route>
+    <Route component={App}>
+      <Route path="/" component={LoginSection} />  
     </Route>
   </Router>,
   document.getElementById('root')

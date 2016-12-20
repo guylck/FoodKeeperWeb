@@ -22,13 +22,11 @@ class LoginSection extends Component {
     }
 
     // This binding is necessary to make `this` work in the callback
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    // this.handleCommonChange = this.handleCommonChange.bind(this);
-    
+    this.handleLoginClick = this.handleLoginClick.bind(this);    
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        // User is signed in.
+        // props.history.push()
       } else {
         // No user is signed in.
       }
