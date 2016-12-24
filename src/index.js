@@ -3,12 +3,18 @@
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import AppWelcome from './AppWelcome';
 import LoginSection from './Views/Login/LoginSectionComponent';
+import App from './App';
 import './index.css';
 import * as firebase from 'firebase';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router,
+         Route,
+         Link, 
+         browserHistory, 
+         IndexRoute 
+       } from 'react-router';
 
 // Initialize Firebase
 var config = {
@@ -18,7 +24,6 @@ var config = {
   storageBucket: "leftright-2e5de.appspot.com",
   messagingSenderId: "371521623116"
 };
-
 firebase.initializeApp(config);
 
 // Needed for onTouchTap
@@ -34,8 +39,11 @@ class Test extends Component{
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route component={App}>
-      <Route path="/" component={LoginSection} />  
+    <Route component={App} >
+      <Route path="/" component={Test} />
+      <Route component={AppWelcome}>
+        <Route path="/login" component={LoginSection} />  
+      </Route>
     </Route>
   </Router>,
   document.getElementById('root')

@@ -2,29 +2,32 @@
 /* eslint-disable */
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as firebase from 'firebase';
+import { browserHistory } from 'react-router'
 
 class App extends Component {
+	constructor(props) {
+		super(props);
 
+		firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				// TODO: navigate when there is user
+				browserHistory.push('/');
+			} else {
+				// No user is signed in.
+				// Routing to '/login'
+				browserHistory.push('/login');
+			}
+		})
+	}
 
-  render() {
-    return (
-      <div>
-        {/* App Template*/}
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to FoodKeeper WEB</h2>
-          </div>
-          <div className="App-intro">
-            {/* Template content */}
-            {this.props.children}
-          </div>
-        </div>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				{this.props.children}
+			</div>
+		);
+	}
 }
 
 export default App;
