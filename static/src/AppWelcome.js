@@ -2,34 +2,22 @@
 /* eslint-disable */
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-
-
+import * as firebase from 'firebase';
+import { browserHistory } from 'react-router'
 class AppWelcome extends Component {
 
   constructor (props) {
     super(props);
   }
 
-  render() {
-    return (
-      <div>
-        {/* App Template*/}
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to FoodKeeper WEB</h2>
-          </div>
-          <div className="App-intro">
-            {/* Template content */}
-            {this.props.children}
-          </div>
-        </div>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				{this.props.children}
+			</div>
+		);
+	}
 }
 
-export default AppWelcome;
+export default App;
+>>>>>>> cb7f501159e501a53e119101a512679d1b3a2e7b:src/App.js
