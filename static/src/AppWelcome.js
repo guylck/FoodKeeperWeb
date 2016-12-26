@@ -19,5 +19,5 @@ class AppWelcome extends Component {
 	}
 }
 
-export default App;
+export default AppWelcome;
 
