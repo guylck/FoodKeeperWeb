@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { browserHistory } from 'react-router'
+import './App.css';
 class AppWelcome extends Component {
 
   constructor (props) {
@@ -13,7 +14,12 @@ class AppWelcome extends Component {
 	render() {
 		return (
 			<div>
-				{this.props.children}
+				<div className="App-header">
+					<h1>Title</h1>
+				</div>
+				<div>
+					{this.props.children}
+				</div>
 			</div>
 		);
 	}
