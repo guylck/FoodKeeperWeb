@@ -3,13 +3,17 @@ var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 
 module.exports = {
+  debug: true,
   context: __dirname,
+  devtool: 'source-map',
 
-  entry: './static/src/index.js', // entry point of our app. static/js/index.js should require other js modules and dependencies it needs
+  // entry point of our app. static/js/index.js should require other js modules and dependencies it needs
+  entry: './static/src/index.js', 
 
   output: {
       path: path.resolve('./static/bundles/'),
       filename: "[name]-[hash].js",
+      publicPath: '/static/bundles/'
   },
 
   plugins: [
@@ -27,10 +31,10 @@ module.exports = {
           presets:['react', 'es2015']
         }
       },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.jpg$/, loader: "file-loader" },
-      { test: /\.svg$/, loader: 'babel!react-svg' }
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'file-loader' },
     ],
   },
 

@@ -4,9 +4,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import AppWelcome from './AppWelcome';
-import LoginSection from './Views/Login/LoginSectionComponent';
+import LoginView from './Views/Login/LoginView';
 import App from './App';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import * as firebase from 'firebase';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Router,
@@ -42,7 +43,7 @@ ReactDOM.render(
     <Route component={App} >
       <Route path="/" component={Test} />
       <Route component={AppWelcome}>
-        <Route path="/login" component={LoginSection} />  
+        <Route path="/login" component={LoginView} />  
       </Route>
     </Route>
   </Router>,

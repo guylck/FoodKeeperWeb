@@ -6,8 +6,6 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import './Login.css';
-import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {indigo200} from 'material-ui/styles/colors';
 import * as firebase from 'firebase';
 
@@ -39,11 +37,7 @@ class LoginSection extends Component {
     this.setState({value: event.target.value});
   }
 
-  getChildContext() {
-    return { muiTheme: getMuiTheme(baseTheme) };
-  }
   render() {
-
     var loginInputsStyleUnderline = {
       borderColor: indigo200
     }
@@ -53,24 +47,29 @@ class LoginSection extends Component {
     }
 
     return (
-      <div>
-        <TextField
-          className="Login-input"
-          floatingLabelText="Email" 
-          underlineFocusStyle={loginInputsStyleUnderline} 
-          floatingLabelStyle={loginInputStyleFloatigLabel}
-          onChange={(event) => this.setState({email: event.target.value})}
-          value={this.state.value}
-          />
-        <TextField
-          className="Login-input"
-          floatingLabelText="Password"
-          type="password"
-          underlineFocusStyle={loginInputsStyleUnderline} 
-          floatingLabelStyle={loginInputStyleFloatigLabel}    
-          onChange={(event) => this.setState({password: event.target.value})}         
-          value={this.state.value}          
-          />
+      <div style={{textAlign: 'left'}}>
+        <h3>Login</h3>
+        <div>
+          <TextField
+            className="Login-input"
+            floatingLabelText="Email" 
+            underlineFocusStyle={loginInputsStyleUnderline} 
+            floatingLabelStyle={loginInputStyleFloatigLabel}
+            onChange={(event) => this.setState({email: event.target.value})}
+            value={this.state.value}
+            />
+        </div>
+        <div>
+          <TextField
+            className="Login-input"
+            floatingLabelText="Password"
+            type="password"
+            underlineFocusStyle={loginInputsStyleUnderline} 
+            floatingLabelStyle={loginInputStyleFloatigLabel}    
+            onChange={(event) => this.setState({password: event.target.value})}         
+            value={this.state.value}          
+            />
+        </div>
         <div>
           <div>
             <RaisedButton

@@ -4,6 +4,9 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { browserHistory } from 'react-router'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 class App extends Component {
 	constructor(props) {
@@ -24,7 +27,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				{this.props.children}
+				<MuiThemeProvider>
+					{this.props.children}
+				</MuiThemeProvider>
 			</div>
 		);
 	}
