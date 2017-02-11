@@ -15,7 +15,10 @@ class App extends Component {
 		firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
 				// TODO: navigate when there is user
-				browserHistory.push('/');
+				// browserHistory.push('/');
+				
+				browserHistory.push('/login');
+				
 			} else {
 				// No user is signed in.
 				// Routing to '/login'

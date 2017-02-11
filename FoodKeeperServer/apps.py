@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class FoodkeeperserverConfig(AppConfig):
+class FoodKeeperServerConfig(AppConfig):
     name = 'FoodKeeperServer'

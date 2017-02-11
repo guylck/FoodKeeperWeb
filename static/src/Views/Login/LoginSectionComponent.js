@@ -8,6 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import './Login.css';
 import {indigo200} from 'material-ui/styles/colors';
 import * as firebase from 'firebase';
+import {textFieldStyle} from './LoginCompletingStyles';
 
 class LoginSection extends Component {
 
@@ -38,25 +39,21 @@ class LoginSection extends Component {
   }
 
   render() {
-    var loginInputsStyleUnderline = {
-      borderColor: indigo200
-    }
 
-    var loginInputStyleFloatigLabel = {
-      color: indigo200
-    }
+    var underlineStyle = textFieldStyle.underline;
+    var floatingTextStyle = textFieldStyle.floatingLabel;
 
     return (
       <div style={{textAlign: 'left'}}>
-        <h3>Login</h3>
+        <h4>Login</h4>
         <div>
           <TextField
             className="Login-input"
             floatingLabelText="Email" 
-            underlineFocusStyle={loginInputsStyleUnderline} 
-            floatingLabelStyle={loginInputStyleFloatigLabel}
+            underlineFocusStyle={underlineStyle} 
+            floatingLabelStyle={floatingTextStyle}
             onChange={(event) => this.setState({email: event.target.value})}
-            value={this.state.value}
+            value={this.state.email}
             />
         </div>
         <div>
@@ -64,10 +61,10 @@ class LoginSection extends Component {
             className="Login-input"
             floatingLabelText="Password"
             type="password"
-            underlineFocusStyle={loginInputsStyleUnderline} 
-            floatingLabelStyle={loginInputStyleFloatigLabel}    
+            underlineFocusStyle={underlineStyle} 
+            floatingLabelStyle={floatingTextStyle}
             onChange={(event) => this.setState({password: event.target.value})}         
-            value={this.state.value}          
+            value={this.state.password}          
             />
         </div>
         <div>
