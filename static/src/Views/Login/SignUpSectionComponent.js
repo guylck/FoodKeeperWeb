@@ -38,7 +38,8 @@ class SignUpSection extends Component {
 					email: user.email,
 					providerData: user.providerData,
 					firstName: state.firstName,
-					lastName: state.lastName
+					lastName: state.lastName,
+					providerId: "email"
 				};
 
 				if (user.photoURL) {
@@ -48,9 +49,13 @@ class SignUpSection extends Component {
 				// Adding user data to db
 				fetch('/api/users/', {
 					method: 'POST',
-					body: {
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
 						user: userToAdd
-					}
+					})
 				});
 			}, 
 			function errorCallback(error) {
