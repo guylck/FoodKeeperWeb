@@ -21,21 +21,22 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = BASE_DIR + '\\static\\public'
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+# SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = True
+
+if DEBUG:
+    WEBPACK_LOADER = {
+        'DEFAULT': {
+            'BUNDLE_DIR_NAME': 'bundles/',
+            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        }
     }
-}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '=ao&%az8kowci4ioe&e0per!gqp+!s$m0c3p!(35z43a^uq1(t'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -50,8 +51,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webpack_loader',
 ]
+
+if DEBUG:
+    INSTALLED_APPS.append('webpack_loader')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
