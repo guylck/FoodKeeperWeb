@@ -16,10 +16,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATICFILES_DIRS = (
-    BASE_DIR + '\\static', # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
+    BASE_DIR + '/static', # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
 )
 
-STATIC_ROOT = BASE_DIR + '\\static\\public'
+STATIC_ROOT = BASE_DIR + '/static/public'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -71,8 +71,8 @@ ROOT_URLCONF = 'FoodKeeperWeb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['static\\public',
-                 'static\\bundles'],
+        'DIRS': ['static/public',
+                 'static/bundles'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
