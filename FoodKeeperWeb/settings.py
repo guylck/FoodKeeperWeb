@@ -22,7 +22,7 @@ STATICFILES_DIRS = (
 STATIC_ROOT = BASE_DIR + '\\static\\public'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = False
 
 if DEBUG:
     WEBPACK_LOADER = {
