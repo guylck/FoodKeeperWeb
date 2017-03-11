@@ -24,13 +24,13 @@ STATIC_ROOT = BASE_DIR + '/static/public'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-if DEBUG:
-    WEBPACK_LOADER = {
-        'DEFAULT': {
-            'BUNDLE_DIR_NAME': 'bundles/',
-            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
-        }
+# if DEBUG:
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
     }
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
