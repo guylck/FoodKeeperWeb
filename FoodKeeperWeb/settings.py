@@ -19,10 +19,10 @@ STATICFILES_DIRS = (
     BASE_DIR + '/static', # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
 )
 
-STATIC_ROOT = BASE_DIR + '/static/public'
+STATIC_ROOT = os.path.join(BASE_DIR, '..','static')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # if DEBUG:
 WEBPACK_LOADER = {

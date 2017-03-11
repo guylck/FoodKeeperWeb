@@ -2,12 +2,15 @@
 node_modules
 static/public
 static/bundles
-FoodKeeperWeb/__pycache__/*
+FoodKeeperWeb/__pycache__
 db.sqlite3
 webpack-stats.json
-FoodKeeperServer/__pycache__/*
-FoodKeeperServer/migrations/*
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
+FoodKeeperServer/__pycache__
+
+# Elastic Beanstalk Files
+
+.elasticbeanstalk/*
+
+!.elasticbeanstalk/*.cfg.yml
+
 !.elasticbeanstalk/*.global.yml
