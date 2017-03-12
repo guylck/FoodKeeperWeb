@@ -38,7 +38,7 @@ WEBPACK_LOADER = {
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '=ao&%az8kowci4ioe&e0per!gqp+!s$m0c3p!(35z43a^uq1(t'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
