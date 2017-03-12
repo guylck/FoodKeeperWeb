@@ -1,6 +1,5 @@
 .vscode
 node_modules
-static/public
 static/bundles
 FoodKeeperWeb/__pycache__
 db.sqlite3
