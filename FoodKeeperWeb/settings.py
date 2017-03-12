@@ -48,7 +48,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'fkw.log',
+            'filename': BASE_DIR + '/fkw.log',
             'formatter': 'verbose'
         },
     },
