@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "webpack --config webpack.config.js --watch",
-    "build": "react-scripts build",
+    // "build": "react-scripts build",
+    "build": "webpack --config webpack.config.js --progress --colors",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
