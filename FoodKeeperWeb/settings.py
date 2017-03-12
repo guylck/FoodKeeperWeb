@@ -84,10 +84,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webpack_loader',
 ]
-
-if DEBUG:
-    INSTALLED_APPS.append('webpack_loader')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
