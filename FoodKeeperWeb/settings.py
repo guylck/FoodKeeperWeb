@@ -48,7 +48,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'app-logs/fkw.log'),
+            'filename': os.path.join(BASE_DIR, 'app-logs', 'fkw.log'),
             'formatter': 'verbose'
         },
     },
