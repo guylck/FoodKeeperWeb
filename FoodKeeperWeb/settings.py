@@ -49,7 +49,7 @@ if not DEBUG:
             'file': {
                 'level': 'DEBUG',
                 'class': 'logging.FileHandler',
-                'filename': os.path.join('/opt/python/current/logs', 'fkw.log'),
+                'filename': os.path.join('/opt/logs', 'fkw.log'),
                 'formatter': 'verbose'
             },
         },
